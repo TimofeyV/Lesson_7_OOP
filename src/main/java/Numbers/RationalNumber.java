@@ -5,7 +5,10 @@ public class RationalNumber {
 
     public RationalNumber(int numerator, int denominator) {
         this.numerator = numerator;
-        this.denominator = denominator;
+        if(denominator == 0) {
+            throw new IllegalArgumentException("denominator == 0?");
+        }
+        else this.denominator = denominator;
     }
 
     public int getDenominator() {
