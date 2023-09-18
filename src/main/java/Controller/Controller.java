@@ -7,6 +7,9 @@ import Views.UserView;
 
 import java.util.List;
 
+/**
+ * Класс контроллер для работы с числами
+ */
 public class Controller {
 
     NumberService numberService = new NumberService();
@@ -40,6 +43,10 @@ public class Controller {
         }
     }
 
+    /**
+     * Работа с рациональными числами
+     * @param rationalNumbers результат действий
+     */
     private void workWithRationalNumbers(List<RationalNumber> rationalNumbers) {
         userView.set("""
                 Выберете функцию:
@@ -108,6 +115,10 @@ public class Controller {
         }
     }
 
+    /**
+     * Работа с комплексными числами
+     * @param allComplexNumbers результат действий
+     */
     private void workWithComplexNumbers(List<ComplexNumber> allComplexNumbers) {
         userView.set("""
                 Выберете функцию:

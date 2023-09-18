@@ -7,6 +7,10 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Содержит список комплексых и рациональных чисел
+ * Включает в себя методы сложения, вычитания, умножения, деления и сокращения чисел
+ */
 public class NumberService implements NumberInterface {
     private List<ComplexNumber> complexNumbers;
     private List<RationalNumber> rationalNumbers;
@@ -27,6 +31,9 @@ public class NumberService implements NumberInterface {
         return rationalNumbers;
     }
 
+    /**
+     * Создание комплексных чисел
+     */
     @Override
     public void createCoupleComplexNumbers() {
         Scanner scanner = new Scanner(System.in);
@@ -46,6 +53,9 @@ public class NumberService implements NumberInterface {
         complexNumbers.add(complexNumber2);
     }
 
+    /**
+     * Создание рациональных чисел
+     */
     @Override
     public void createCoupleRationalNumbers() {
         Scanner scanner = new Scanner(System.in);
@@ -66,6 +76,12 @@ public class NumberService implements NumberInterface {
         rationalNumbers.add(rationalNumber2);
     }
 
+    /**
+     * Сложение комплексных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат сложения
+     */
     @Override
     public ComplexNumber addition(ComplexNumber x, ComplexNumber y) {
         ComplexNumber z = new ComplexNumber(0.0, 0.0);
@@ -73,7 +89,12 @@ public class NumberService implements NumberInterface {
         z.setImaginaryPart(x.getImaginaryPart() + y.getImaginaryPart());
         return z;
     }
-
+    /**
+     * Вычитание комплексных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат вычитания
+     */
     @Override
     public ComplexNumber subtraction(ComplexNumber x, ComplexNumber y) {
         ComplexNumber z = new ComplexNumber(0.0, 0.0);
@@ -81,7 +102,12 @@ public class NumberService implements NumberInterface {
         z.setImaginaryPart(x.getImaginaryPart() - y.getImaginaryPart());
         return z;
     }
-
+    /**
+     * Умножение комплексных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат умножения
+     */
     @Override
     public ComplexNumber multiplication(ComplexNumber x, ComplexNumber y) {
         ComplexNumber z = new ComplexNumber(0.0, 0.0);
@@ -91,7 +117,12 @@ public class NumberService implements NumberInterface {
                 (x.getNumerator() * y.getImaginaryPart()));
         return z;
     }
-
+    /**
+     * Деление комплексных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат деления
+     */
     @Override
     public ComplexNumber division(ComplexNumber x, ComplexNumber y) {
         ComplexNumber z = new ComplexNumber(0.0, 0.0);
@@ -103,7 +134,12 @@ public class NumberService implements NumberInterface {
                 ((y.getNumerator() * y.getNumerator()) + (y.getImaginaryPart() * y.getImaginaryPart()))));
         return z;
     }
-
+    /**
+     * Сложение рациональных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат сложения
+     */
     @Override
     public RationalNumber addition(RationalNumber x, RationalNumber y) {
         RationalNumber z = new RationalNumber(0, 1);
@@ -112,7 +148,12 @@ public class NumberService implements NumberInterface {
         reduction(z);
         return z;
     }
-
+    /**
+     * Вычитание рациональных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат вычитания
+     */
     @Override
     public RationalNumber subtraction(RationalNumber x, RationalNumber y) {
         RationalNumber z = new RationalNumber(0, 1);
@@ -121,7 +162,12 @@ public class NumberService implements NumberInterface {
         if (z.getNumerator() != 0) reduction(z);
         return z;
     }
-
+    /**
+     * Умножение рациональных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат умножения
+     */
     @Override
     public RationalNumber multiplication(RationalNumber x, RationalNumber y) {
         RationalNumber z = new RationalNumber(0, 1);
@@ -130,7 +176,12 @@ public class NumberService implements NumberInterface {
         if (z.getNumerator() != 0) reduction(z);
         return z;
     }
-
+    /**
+     * Деление рациональных чисел
+     * @param x - первое число
+     * @param y - второе число
+     * @return результат деления
+     */
     @Override
     public RationalNumber division(RationalNumber x, RationalNumber y) {
         RationalNumber z = new RationalNumber(0, 1);
@@ -140,6 +191,11 @@ public class NumberService implements NumberInterface {
         return z;
     }
 
+    /**
+     * Сокращения рационального числа
+     * @param z - число, которое необходимо сократить
+     * @return сокращенное число
+     */
     public RationalNumber reduction(RationalNumber z){
         if (z.getNumerator() % 2 != 0 && z.getNumerator() % 3 != 0 && z.getNumerator() % 5 != 0 && z.getNumerator() % 7 != 0){
             return z;

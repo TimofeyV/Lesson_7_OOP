@@ -1,8 +1,23 @@
 package Numbers;
+
+/**
+ * Класс рациональных чисел
+ */
 public class RationalNumber {
+    /**
+     * Числитель
+     */
     private int numerator;
+    /**
+     * Знаменатель
+     */
     private int denominator;
 
+    /**
+     * Конструктор класса
+     * @param numerator
+     * @param denominator
+     */
     public RationalNumber(int numerator, int denominator) {
         this.numerator = numerator;
         if(denominator == 0) {

@@ -1,10 +1,23 @@
 package Numbers;
-
+/**
+ * Класс Комплексных чисел
+ *
+ */
 public class ComplexNumber {
+    /**
+     * Реальная часть
+     */
     private double realPart;
-
+    /**
+     * Мнимая часть
+     */
     private double imaginaryPart;
 
+    /**
+     * Конструктор класса (полный)
+     * @param realPart
+     * @param imaginaryPart
+     */
     public ComplexNumber(double realPart, double imaginaryPart) {
         this.realPart = realPart;
         this.imaginaryPart = imaginaryPart;

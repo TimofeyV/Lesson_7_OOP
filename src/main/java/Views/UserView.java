@@ -3,6 +3,10 @@ package Views;
 import java.util.List;
 import java.util.Scanner;
 
+/**
+ * Класс для ведения логов
+ * Включает методы создания, обновления, вывода логов
+ */
 public class UserView implements View {
     public String log = "";
     Scanner in = new Scanner(System.in);
